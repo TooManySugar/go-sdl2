@@ -2,6 +2,15 @@ package sdl
 
 /*
 #include "sdl_wrapper.h"
+
+// until SDL 2.0.6 SDL_shape.h was not included in SDL.h
+#if !(SDL_VERSION_ATLEAST(2,0,6))
+#if defined(_WIN32)
+	#include <SDL2/SDL_shape.h>
+#else
+	#include <SDL_shape.h>
+#endif
+#endif
 */
 import "C"
 import (
