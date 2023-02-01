@@ -13,10 +13,7 @@ package sdl
 #endif
 */
 import "C"
-import (
-	"fmt"
-	"unsafe"
-)
+import "unsafe"
 
 const (
 	NONSHAPEABLE_WINDOW    = C.SDL_NONSHAPEABLE_WINDOW
@@ -137,7 +134,7 @@ func (cwsm cWindowShapeMode) goWSM() WindowShapeMode {
 		}
 
 	default:
-		panic(fmt.Sprintf("unknown WindowShapeMode: %d", cwsm.mode))
+		panic("Unknown WindowShapeModeKind")
 
 	}
 }
